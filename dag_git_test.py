@@ -44,8 +44,8 @@ t3 = BashOperator(
     dag=dag,
 )
 
-#t4 = BashOperator(task_id="printWireframe", bash_command="echo Wireframe && sleep 20", retries=3, dag=dag)
+t4 = BashOperator(task_id="printWireframe", bash_command="echo Wireframe && sleep 20", retries=3, dag=dag)
 
 t2.set_upstream(t1)
 t3.set_upstream(t1)
-#t4.set_upstream(t3)
+t4.set_upstream(t3)
