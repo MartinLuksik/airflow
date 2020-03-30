@@ -13,7 +13,7 @@ default_args = {
     'depends_on_past': False,
     'start_date': datetime(2015, 6, 1),
     'retries': 1,
-    'retry_delay': timedelta(minutes=1),
+    'retry_delay': timedelta(minutes=1)
 }
 
 
@@ -44,4 +44,4 @@ sleep_task = BashOperator(
     dag=dag)
 
 
-read_s3.set_downstream(sleep_task)
+read_s3.set_upstream(sleep_task)
