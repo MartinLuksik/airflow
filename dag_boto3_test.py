@@ -17,7 +17,7 @@ default_args = {
 }
 
 
-dag = DAG('s3_to_pandas',
+dag = DAG("s3_to_pandas",
           default_args=default_args,
           schedule_interval=None)  # "schedule_interval=None" means this dag will only be run by external commands
 
